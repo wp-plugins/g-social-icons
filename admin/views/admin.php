@@ -137,6 +137,6 @@ do_settings_sections( 'g-social-icons' ); ?>
         <h5>Author: Gerben Van Amstel
         <br>Email: gerbenvanamstel@gmail.com
         <br>Website: http://www.gerbenvanamstel.com
-        <br>Version: 1.0
+        <br>Version: 1.1
     </h5>
 </div>
