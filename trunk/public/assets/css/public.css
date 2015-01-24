@@ -1,0 +1,23 @@
+#g-social-icons ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#g-social-icons ul li {
+    float:left;
+    margin-left:5px;
+}
+
+#g-social-icons ul li:first-child {
+    margin-left:0;
+}
+
+#g-social-icons ul li a {
+    border: 0;
+}
+
+#g-social-icons ul li a svg {
+    width: 35px;
+    height: 35px;
+}

@@ -1,0 +1,21 @@
+#g-social-icons ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#g-social-icons ul li {
+    float:left;
+}
+
+#g-social-icons ul li:first-child {
+    margin-left:0 !important;
+}
+
+#g-social-icons ul li a {
+    border: 0;
+}
+
+#g-social-icons ul li a svg:hover {
+    opacity: 0.9;
+}
