@@ -9,7 +9,7 @@ A WordPress plugin to easily display social media icons.
 * Set margin in-between the icons 
 * Set icon size
 * Set icon type (square/circle/rounded)
-* Widget & Shortcode support
+* Shortcode support
 
 ## Icons supported:
 
