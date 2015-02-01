@@ -12,7 +12,7 @@
  * Plugin Name:         G Social Icons
  * Plugin URI:          http://www.gerbenvanamstel.com
  * Description:         Easily display social media icons
- * Version:             1.0.0
+ * Version:             1.2.0
  * Author:              Gerben Van Amstel
  * Author URI:          http://www.gerbenvanamstel.com
  * Text Domain:         g-social-icons
@@ -31,7 +31,6 @@ if ( ! defined( 'WPINC' ) ) {
  * Public-Facing Functionality
  *----------------------------------------------------------------------------*/
 
-
 require_once( plugin_dir_path( __FILE__ ) . 'public/class-g-social-icons.php' );
 
 add_action( 'plugins_loaded', array( 'G_Social_Icons', 'get_instance' ) );
@@ -40,12 +39,17 @@ add_action( 'plugins_loaded', array( 'G_Social_Icons', 'get_instance' ) );
  * Dashboard and Administrative Functionality
  *----------------------------------------------------------------------------*/
 
-/*
- * The code below is intended to to give the lightest footprint possible.
- */
 if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 
 	require_once( plugin_dir_path( __FILE__ ) . 'admin/class-g-social-icons-admin.php' );
 	add_action( 'plugins_loaded', array( 'G_Social_Icons_Admin', 'get_instance' ) );
 
 }
+
+/*----------------------------------------------------------------------------*
+ * Widget Functionality
+ *----------------------------------------------------------------------------*/
+
+require_once( plugin_dir_path( __FILE__ ) . 'public/class-g-social-icons-widget.php' );
+
+add_action( 'widgets_init', create_function( '', 'register_widget("G_Social_Icons_Widget");' ) );

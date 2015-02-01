@@ -5,21 +5,25 @@
  * @author    Gerben Van Amstel <gerbenvanamstel@gmail.com>
  * @license   GPL-2.0+
  * @link      http://www.gerbenvanamstel.com
- * @copyright 2014 Gerben Van Amstel
+ * @copyright 2015 Gerben Van Amstel
  */
 ?>
-
 <div class="wrap">
 
     <h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
     
-    <p>Only fill out the URL’s for the icons which you want displayed, you can also change the colour of the icons. If you leave the Icon Colour field empty the plugin will use the original brand colour for the icon.</p>
-
+    <p>Only fill out the URL’s for the icons which you want displayed, you can also change the type of icons (square/circle/rounded), set the size, margin and colour of the icons. If you leave the Icon Colour field empty the plugin will use the original default colours.</p>
+    <hr>
     <form method="post" action="options.php">
         <table class="form-table">
             <?php settings_fields( 'g-social-icons' );
 do_settings_sections( 'g-social-icons' ); ?>
             <tbody>
+                <tr>
+                    <td>
+                        <h3>Social Media URL's</h3>
+                    </td>
+                </tr>
                 <tr>
                     <th scope="row"><label for="facebook">Facebook</label></th>
                     <td><input name="facebook" type="text" id="facebook" value="<?php echo esc_attr( get_option('facebook') ); ?>" placeholder="Your Facebook URL" class="regular-text"></td>
@@ -85,6 +89,22 @@ do_settings_sections( 'g-social-icons' ); ?>
                     </td>
                 </tr>
                 <tr>
+                    <td>
+                        <h3>Display Settings</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="border_radius">Type</label></th>
+                    <td>
+                        <select name="border_radius" id="border_radius">
+                            <option>Select type</option>
+                            <option value="square" <?php selected( get_option('border_radius'), 'square' ); ?>>Square</option>
+                            <option value="circle" <?php selected( get_option('border_radius'), 'circle' ); ?>>Circle</option>
+                            <option value="rounded" <?php selected( get_option('border_radius'), 'rounded' ); ?>>Rounded</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
                     <th scope="row"><label for="alignment">Alignment</label></th>
                     <td>
                         <select name="alignment" id="alignment">
@@ -96,7 +116,15 @@ do_settings_sections( 'g-social-icons' ); ?>
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row"><label for="behance">Icon Colour</label></th>
+                    <th scope="row"><label for="width_height">Size</label></th>
+                    <td><input name="width_height" type="text" id="width_height" value="<?php echo esc_attr( get_option('width_height', '35px') ); ?>" placeholder="e.g. 35px" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="margin">In-between Margin</label></th>
+                    <td><input name="margin" type="text" id="margin" value="<?php echo esc_attr( get_option('margin', '5px') ); ?>" placeholder="e.g. 5px" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="behance">Colour</label></th>
                     <td><input name="colour" type="text" id="colour" value="<?php echo esc_attr( get_option('colour') ); ?>" placeholder="e.g. #6441a5" class="regular-text"></td>
                 </tr>
 
@@ -104,9 +132,10 @@ do_settings_sections( 'g-social-icons' ); ?>
         </table>
         <?php submit_button(); ?>
     </form>
+        <hr>
         <h5>Author: Gerben Van Amstel
         <br>Email: gerbenvanamstel@gmail.com
         <br>Website: http://www.gerbenvanamstel.com
-        <br>Version: 1.0
+        <br>Version: 1.2
     </h5>
 </div>

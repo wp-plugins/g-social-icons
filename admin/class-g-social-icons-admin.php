@@ -149,6 +149,9 @@ class G_Social_Icons_Admin {
         register_setting( 'g-social-icons', 'rss' );
         register_setting( 'g-social-icons', 'alignment' );
         register_setting( 'g-social-icons', 'colour' );
+        register_setting( 'g-social-icons', 'width_height' );
+        register_setting( 'g-social-icons', 'margin' );
+        register_setting( 'g-social-icons', 'border_radius' );
     }
 
 }
