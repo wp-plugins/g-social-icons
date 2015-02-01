@@ -55,15 +55,14 @@ Use [g-social-icons] or `<?php echo do_shortcode(‘[g-social-icons]’); ?>` to
 
 == Changelog ==
 
-= 1.2 =
-* Added Widget support
-
 = 1.1 =
 * Fixed bug if entered URL including https.
 * Added ability to set the icons size.
 * Added ability to set margin in-between icons.
 * Added ability to choose square/circle/rounded icons (border-radius)
 
+= 1.2 =
+* Added Widget support
 
 == Installation ==
 
