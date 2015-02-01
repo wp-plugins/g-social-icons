@@ -55,6 +55,9 @@ Use [g-social-icons] or `<?php echo do_shortcode(‘[g-social-icons]’); ?>` to
 
 == Changelog ==
 
+= 1.2 =
+* Added Widget support
+
 = 1.1 =
 * Fixed bug if entered URL including https.
 * Added ability to set the icons size.
